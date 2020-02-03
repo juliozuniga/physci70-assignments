@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Cabin:400,300,300italic,400italic,700,700italic);
+@import url('https://fonts.googleapis.com/css?family=EB+Garamond:400,400i,700,700i|Roboto+Mono:300,300i,400,700,700i&display=swap');
 /*@import url(https://fonts.googleapis.com/css?family=Cabin:400,300,700);
 */
 
@@ -102,7 +102,8 @@ table tr:nth-child(even) td{
 
 /* line 171, ../scss/_custom.scss */
 div div h2 {
-  font-family: "Cabin", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: 'EB Garamond', serif;
+  font-family: 'Roboto Mono', monospace;
   font-weight: bold;
   font-style: normal;
   font-size: 1.5rem;
@@ -113,7 +114,8 @@ div div h2 {
 
 /* line 181, ../scss/_custom.scss */
 div div h3 {
-  font-family: "Cabin", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: 'EB Garamond', serif;
+  font-family: 'Roboto Mono', monospace;
   font-weight: bold;
   font-style: normal;
   font-size: 1.125rem;
@@ -133,7 +135,8 @@ header {
 }
 
 div div header h1 {
-  font-family: "Cabin", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: 'EB Garamond', serif;
+  font-family: 'Roboto Mono', monospace;
   font-weight: bold;
   font-style: normal;
   font-size: 1.625rem;
@@ -154,7 +157,8 @@ div div header h1 a {
 
 
 div div header h2 {
-  font-family: "Cabin", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: 'EB Garamond', serif;
+  font-family: 'Roboto Mono', monospace;
   font-weight: 300;
   font-style: normal;
   font-size: 0.8125rem;
@@ -206,7 +210,8 @@ nav ul.inline-list-custom {
 
 /* line 305, ../scss/_custom.scss */
 nav ul.inline-list-custom li {
-  font-family: "Cabin", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: 'EB Garamond', serif;
+  font-family: 'Roboto Mono', monospace;
   font-weight: 300;
   font-style: normal;
   font-size: 1rem;
@@ -255,7 +260,8 @@ Project
 
 /* line 369, ../scss/_custom.scss */
 .thumbnail-caption {
-  font-family: "Cabin", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: 'EB Garamond', serif;
+  font-family: 'Roboto Mono', monospace;
   font-weight: 300;
   font-style: normal;
   font-weight: bold;
@@ -300,7 +306,8 @@ footer ul {
 
 /* line 462, ../scss/_custom.scss */
 footer li {
-  font-family: "Cabin", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: 'EB Garamond', serif;
+  font-family: 'Roboto Mono', monospace;
   font-weight: normal;
   font-style: normal;
   font-size: 0.8125rem;
@@ -381,7 +388,8 @@ body {
   color: #333d41;
   padding: 0;
   margin: 0;
-  font-family: "Cabin", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: 'EB Garamond', serif;
+  font-family: 'Roboto Mono', monospace;
   font-weight: normal;
   font-style: normal;
   line-height: 1;
@@ -736,7 +744,7 @@ p {
 /* Default Link Styles */
 /* line 152, ../bower_components/foundation/scss/foundation/components/_type.scss */
 a {
-  color: #e33434;
+  color: #7300ff;
   /*color: #ed225d;*/
   /*color: #4286f4;*/
   text-decoration: none;
@@ -745,7 +753,7 @@ a {
 }
 /* line 158, ../bower_components/foundation/scss/foundation/components/_type.scss */
 a:hover, a:focus {
-  color: #af320c;
+  color: #cd02d4;
   border: none !important;
 }
 /* line 160, ../bower_components/foundation/scss/foundation/components/_type.scss */
@@ -758,10 +766,10 @@ a img {
 p {
   font-family: inherit;
   font-weight: normal;
-  font-size: 1rem;
+  font-size: 0.875rem;
   line-height: 1.5;
-  margin-bottom: 1rem;
-  margin-top: 1rem;
+  margin-bottom: 0.875rem;
+  margin-top: 0.875rem;
   text-rendering: optimizeLegibility;
 }
 /* line 174, ../bower_components/foundation/scss/foundation/components/_type.scss */
@@ -769,7 +777,8 @@ p {
 /* Default header styles */
 /* line 182, ../bower_components/foundation/scss/foundation/components/_type.scss */
 h1, h2, h3 {
-  font-family: "Cabin", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: 'EB Garamond', serif;
+  font-family: 'Roboto Mono', monospace;
   font-weight: 300;
   font-style: normal;
   color: #333d41;
@@ -802,9 +811,9 @@ b {
 }
 
 ul {
-  font-size: 1rem;
-  line-height: 1.5;
-  margin-bottom: 1.25rem;
+  font-size: 0.875rem;
+  line-height: 1;
+  margin-bottom: 1rem;
   list-style-position: outside;
   font-family: inherit;
 }
@@ -819,9 +828,9 @@ ul {
 /* Unordered Lists */
 /* line 270, ../bower_components/foundation/scss/foundation/components/_type.scss */
 ul li ul {
-  margin-left: 1.25rem;
+  margin-left: 1rem;
   margin-bottom: 0;
-  font-size: 1rem;
+  font-size: 0.875rem;
   /* Override nested font-size change */
 }
 
