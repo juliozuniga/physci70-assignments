@@ -41,19 +41,19 @@ html {
 
 /* line 73, ../scss/_custom.scss */
 a, img, nav ul a, .thumbnail-caption a {
-  -webkit-transition: color 0.2s ease-out;
-  -moz-transition: color 0.2s ease-out;
-  transition: color 0.2s ease-out;
+  -webkit-transition: color 0.4s ease-out;
+  -moz-transition: color 0.4s ease-out;
+  transition: color 0.4s ease-out;
 }
 
 /* line 77, ../scss/_custom.scss */
 li a, .thumbnail-caption a {
-  -webkit-transition: border 0.2s ease-out;
-  -moz-transition: border 0.2s ease-out;
-  transition: border 0.2s ease-out;
-  -webkit-transition: color 0.2s ease-out;
-  -moz-transition: color 0.2s ease-out;
-  transition: color 0.2s ease-out;
+  -webkit-transition: border 0.4s ease-out;
+  -moz-transition: border 0.4s ease-out;
+  transition: border 0.4s ease-out;
+  -webkit-transition: color 0.4s ease-out;
+  -moz-transition: color 0.4s ease-out;
+  transition: color 0.4s ease-out;
   border-bottom: 1px solid #e33434;
   padding-bottom: 1px;
 }
@@ -753,7 +753,7 @@ a {
 }
 /* line 158, ../bower_components/foundation/scss/foundation/components/_type.scss */
 a:hover, a:focus {
-  color: #cd02d4;
+  color: #dc00e3;
   border: none !important;
 }
 /* line 160, ../bower_components/foundation/scss/foundation/components/_type.scss */
