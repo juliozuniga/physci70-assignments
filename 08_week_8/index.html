@@ -34,11 +34,10 @@
       <p>The potentiometer (10k Ohms) requires 5V, while the stepper motor needs a little more. I have them both sharing ground from the Arduino, but the potentiometer is connected to the 5V output pin while the stepper is plugged into the VIN output pin using an external power source.<br>
       Digital pins 2 through 5 go to the motor through the H-bridge.</p>
 
-      <p>I wanted to be able to control the stepper using a potentiometer, which i did by slightly modifying this code i found from a library called <a href="http://www.airspayce.com/mikem/arduino/AccelStepper/index.html" target="_blank"><i>AccelStepper</i></a>. See code below:</p>
+      <p>I wanted to be able to control the stepper using a potentiometer, which i did by slightly modifying this code i found from a library called <a href="http://www.airspayce.com/mikem/arduino/AccelStepper/index.html" target="_blank"><i>AccelStepper</i></a>.</p>
 
+      <p>Here is the Arduino code (after installing the library and including the "AccelStepper" header file at the beginning):</p>
       <p><pre><code class="language-arduino">
-            #include <AccelStepper.h>
-
             // Define a stepper and the pins it will use
             AccelStepper stepper; // Defaults to AccelStepper::FULL4WIRE (4 pins) on 2, 3, 4, 5
 
