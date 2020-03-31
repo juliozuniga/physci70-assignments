@@ -24,12 +24,12 @@
       <h5>8:OUTPUT</h5>
       
       <p>This week i was particularly interested in doing tests with a stepper motor, which i hadn't really used before.<br>
-      I apologize the wiring isn't clearer in these pictures but the lack of access to more wires of different colors and needed an even more DIY approach:<br>
+      I apologize the wiring isn't clearer in these pictures but the lack of access to more wires of different colors and the even more DIY approach needed made it harder to document. Hopefully you can kind of see things here:<br>
       <img src="./stepper_wiring.jpg" class="img-responsive margin" style="width:40%" alt="Stepper motor and potentiometer: wiring"></p>
-      <p>and a picture with the H-bridge visible:<br>
+      <p>And this is a picture with the H-bridge visible:<br>
       <img src="./stepper_wiring_complete.jpg" class="img-responsive margin" style="width:60%" alt="Stepper motor and potentiometer: wiring, 2"></p>
 
-      <p>I'm using the NEMA 17 bipolar stepper motor hooked up to an Arduino UNO through the H-bridge. The motor, as far as i can tell, has two pairs of leads with the wire colors 1) black/teal and 2) red/blue; coil resistance 30 Ohms.</p>
+      <p>I'm using the NEMA 17 bipolar stepper motor hooked up to an Arduino UNO through our H-bridge. The motor, as far as i can tell, has two pairs of leads with the wire colors 1) black/teal and 2) red/blue; coil resistance is 30 Ohms.</p>
 
       <p>The potentiometer (10k Ohms) requires 5V, while the stepper motor needs a little more. I have them both sharing ground from the Arduino, but the potentiometer is connected to the 5V output pin while the stepper is plugged into the VIN output pin using an external power source.<br>
       Digital pins 2 through 5 go to the motor through the H-bridge.</p>
