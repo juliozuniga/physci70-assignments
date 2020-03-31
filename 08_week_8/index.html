@@ -8,7 +8,9 @@
 <meta name="description" content="Index Page">
 
 <link href="../css/style.css" rel="stylesheet">
-
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/arduino-light.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/arduino.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
 </head>
@@ -23,8 +25,8 @@
       
       <p>This week i was particularly interested in doing tests with a stepper motor, which i hadn't really used before.<br>
       I apologize the wiring isn't clearer in these pictures but the lack of access to more wires of different colors and needed an even more DIY approach:<br>
-      <img src="./stepper_wiring.jpg" class="img-responsive margin" style="width:40%" alt="Stepper motor and potentiometer: wiring"><br>
-      and a picture with the H-bridge visible:<br>
+      <img src="./stepper_wiring.jpg" class="img-responsive margin" style="width:40%" alt="Stepper motor and potentiometer: wiring"></p>
+      <p>and a picture with the H-bridge visible:<br>
       <img src="./stepper_wiring_complete.jpg" class="img-responsive margin" style="width:60%" alt="Stepper motor and potentiometer: wiring, 2"></p>
 
       <p>I'm using the NEMA 17 bipolar stepper motor hooked up to an Arduino UNO through the H-bridge. The motor, as far as i can tell, has two pairs of leads with the wire colors 1) black/teal and 2) red/blue; coil resistance 30 Ohms.</p>
