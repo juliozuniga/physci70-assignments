@@ -8,7 +8,9 @@
 <meta name="description" content="Index Page">
 
 <link href="../css/style.css" rel="stylesheet">
-
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/arduino-light.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/arduino.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
 </head>
@@ -153,6 +155,16 @@
       </p>
 
       <p>Right now I think I just need to play with it a little more to see if I can get the ESP32 to output DC (assuming that is the problem), or, alternatively, get a digital potentiometer and try to put that between the PWM of one of the boards and the analog input. If anyone has any other ideas, they are very welcome! I'll be pretty excited if I get this to actually work.</p>
+
+      <div class="gap-9"></div>
+
+      <p>---</p>
+
+      <div class="gap-9"></div>
+
+      <p>As mentioned above, I chose radio over BLE or WiFi for this particular project. I did spend some time testing BLE and WiFi on the Huzzah, and while I'm still having trouble getting the serial monitor on the Arduino to respond properly with both protocols, I can see on the devices I am using to connect that they are communicating. After some digging, it looks like it might be a problem with the libraries running on my OS, but I will investigate more and post any updates soon. In the meantime, here is a very rudimentary implementation of one of the BLE tutorials using my phone and the Huzzah.</p>
+
+      <p><iframe src="https://giphy.com/embed/ifewJa3bmnQQPbg24C" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></p>
 
       <div class="gap-9"></div>
 

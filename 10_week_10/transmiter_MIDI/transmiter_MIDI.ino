@@ -43,13 +43,13 @@ Serial.println("Now sending");
   Serial.println(F("failed"));
    }
         
-data = (analogRead(A2));   //default is 12 bits for ESP32 ADC, so divide by 16 to map to one byte.
+data = (analogRead(A2))/4;   //default is 12 bits for ESP32 ADC, so divide by 16 to map to one byte.
   //data++;
 Serial.print("Sent ");
 Serial.println(data);
    
 
 
-delay(5);
+delay(10);
 
 } // loop end
