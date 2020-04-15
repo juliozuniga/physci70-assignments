@@ -43,7 +43,7 @@
 
       <p>I went and modified Rob's transmitter code for the nRF24L01 slightly to look like this and uploaded it to my UNO:</p>
       <p><pre><code class="language-arduino">
-            #include <SPI.h>
+            #include SPI.h
             #include "RF24.h"
 
             /* Hardware configuration: Set up nRF24L01 radio on SPI bus plus CE and CS */
@@ -98,10 +98,10 @@
       <p>Initially, I was using another nRF24L01 hooked up to the Metro to receive the transmitted signal. However, I believe I need an actual analog signal as output and not PWM from a digital pin, since that didn't seem to work. The ESP32 Feather does seem to have two pins that are capable of analog output, so I've been trying with that one (unfortunately unsuccessfully so far). That code looks like this:</p>
 
       <p><pre><code class="language-arduino">
-            #<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string"><Arduino.h></span>
-            #<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string"><SPI.h></span>
-            #<span class="hljs-meta-keyword">include</span> "RF24.h"
-            #<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string"><analogWrite.h></span>
+            #include Arduino.h
+            #include SPI.h
+            #include "RF24.h"
+            #include analogWrite.h
 
             RF24 radio(32,14);
 
