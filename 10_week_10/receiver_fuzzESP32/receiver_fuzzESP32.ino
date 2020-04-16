@@ -38,7 +38,12 @@ void setup() {
 void loop() {
 
     byte rec_data;
-    
+    byte s_data;
+    s_data=1;
+
+  if (!radio.write( &s_data, 1 )){
+  Serial.println(F("failed"));
+   }
     if( radio.available()){
                                        // Variable for the received timestamp
       while (radio.available()) {      // While there is data ready
@@ -50,9 +55,7 @@ void loop() {
       Serial.print("received ");
       Serial.println(rec_data);
       
-      delay(10);
-   }
+      delay(5);
+}
 
-
-
-} // Loop
+}

@@ -14,7 +14,7 @@
 RF24 radio(7,8);      //CE and CS pins.  This is the change needed when you change to another board.
 
 byte addresses[][6] = {"1Node","2Node"};
-byte data = 0; 
+byte data = 0;
 
 void setup() {
  Serial.begin(115200);
@@ -30,18 +30,26 @@ void setup() {
 
   radio.openWritingPipe(addresses[0]);
   radio.openReadingPipe(1,addresses[1]);
+  radio.startListening();
  
 }
 
 void loop() {
   
-Serial.println("Now sending");
-
+  byte rec_data;
+  rec_data=0;
   
+  Serial.println("Now sending");
                            
   if (!radio.write( &data, 1 )){
   Serial.println(F("failed"));
    }
+     while (radio.available()) {      // While there is data ready
+        radio.read( &rec_data, 1 );    // Get the payload
+      }
+      
+      Serial.print("received ");
+      Serial.println(rec_data);
         
 data = (analogRead(A2))/4;   //default is 12 bits for ESP32 ADC, so divide by 16 to map to one byte.
   //data++;
@@ -50,6 +58,6 @@ Serial.println(data);
    
 
 
-delay(10);
+delay(5);
 
-} // loop end
+}
