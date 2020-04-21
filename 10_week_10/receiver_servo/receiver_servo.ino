@@ -5,18 +5,27 @@
 * Updated: Dec 2014 by TMRh20. Simplified Mar 2019 RMH.
 */
 
+#include <ESP32Servo.h>
 #include <SPI.h>
 #include "RF24.h"
 
+Servo myservo;
+
 /* Hardware configuration: Set up nRF24L01 radio on SPI bus plus pins 7 & 8 */
-RF24 radio(7,8);
+RF24 radio(32,14);
+
 
 byte addresses[][6] = {"1Node","2Node"};
-int val;
+int servoPin = 39;
+int ADC_Max = 4096;
+int angle;
 
 void setup() {
+
+  myservo.setPeriodHertz(50);
+  myservo.attach(servoPin, 500, 2400);
   
-  Serial.begin(115200);
+  Serial.begin(0);
   Serial.println(F("RF24example:  simple receive"));
   
   
@@ -47,10 +56,10 @@ void loop() {
      
       
       Serial.print("received ");
-      Serial.println(rec_data);
-      val = map(rec_data, 0, 63, 0, 255);
-      analogWrite(9, val);
-      Serial.println(val); 
+      Serial.println(rec_data); 
+      angle = map(rec_data, 0, ADC_Max, 0, 180); 
+      myservo.write(angle);
+      //Serial.println(rec_data); 
    }
 
 

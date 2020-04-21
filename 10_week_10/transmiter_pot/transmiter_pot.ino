@@ -11,7 +11,7 @@
 #include "RF24.h"
 
 /* Hardware configuration: Set up nRF24L01 radio on SPI bus plus CE and CS */
-RF24 radio(7,8);      //CE and CS pins.  This is the change needed when you change to another board.
+RF24 radio(32,14);      //CE and CS pins.  This is the change needed when you change to another board.
 
 byte addresses[][6] = {"1Node","2Node"};
 byte data = 0; 
@@ -43,13 +43,10 @@ Serial.println("Now sending");
   Serial.println(F("failed"));
    }
         
-data = (analogRead(A2))/16;   //default is 12 bits for ESP32 ADC, so divide by 16 to map to one byte.
+data = (analogRead(A2))/4;   //default is 12 bits for ESP32 ADC, so divide by 16 to map to one byte.
   //data++;
 Serial.print("Sent ");
 Serial.println(data);
    
-
-
-delay(5);
 
 } // loop end
