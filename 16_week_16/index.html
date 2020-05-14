@@ -29,12 +29,12 @@
 
 		<p><b>The motivation:</b></p>
 
-		<p>For the past few years, I have found one obstacle when working with live instruments and electronics: while good analog audio equipment, like an electric guitar pedal, for example, <i>sounds</i> great, its interface — the knobs, the switches — isn't ideal to be controlled live by instrumentalists playing chamber music, which often takes place in too quiet of an environment for the on/off swtches on these pedals and keeps the musicians' hands too busy for them to be able to manipulate knobs with their hands while they perform.</p>
+		<p>For the past few years, one of the obstacles I have found when working with live instruments and electronics is that, while good analog audio equipment, like an electric guitar pedal, for example, <i>sounds</i> great, its interface — the knobs, the switches — isn't ideal to be controlled live by instrumentalists playing chamber music, which often takes place in too quiet an environment for the on/off swtches on these pedals and keeps the musicians' hands too busy for them to be able to manipulate knobs with their hands while they perform.</p>
 
 		<p>Approximating these sounds digitally, though possible, requires much programming and a lot of CPU power when running. At the interface level, however, things that are widely available and often used in electroacoustic music, like MIDI pedals, offer readily available connectivity with music software and flexibility in functionality within this software. So, here is where my profect comes in...</p>
 
 		<p>I set about to develop an interface where MIDI pedals (the input) would control parameters that affect the sounds processed by analog electric guitar pedals (the output).<br>
-		One main preoccupation is that I still needed to be able to take advantage of that flexibility afforded by the MIDI pedals I mentioned above. In other words, the MIDI pedal's function cannot be limited to controlling one parameter on the guitar pedal; instead, the data needs to be available to be interpreted in more than one way.
+		One main preoccupation is that I still needed to be able to take advantage of that flexibility afforded by MIDI pedals I mentioned above. In other words, the MIDI pedals' function cannot be limited to controlling one parameter on the guitar pedal; instead, the data needs to be available to be interpreted in more than one way.
 		</p>
 
 		<div class="gap-9"></div>
@@ -49,7 +49,7 @@
 		<img src="./midiped1.jpg" class="img-responsive margin" style="width:30%" alt="A MIDI pedal">
 		<img src="./midiped2.jpg" class="img-responsive margin" style="width:30%" alt="Another MIDI pedal"></p>
 		
-		<p>2. The Arduino communicates with an <b>Adafruit 16-Channel 12-bit PWM/Servo Driver (PCA9685)</b> through i2c as serial communication protocol. More info on the servo driver can be found <a href="https://www.adafruit.com/product/815" target="_blank">here</a>.<br>
+		<p>2. The Arduino communicates with an <b>Adafruit 16-Channel 12-bit PWM/Servo Driver (PCA9685)</b> through <a href="https://learn.sparkfun.com/tutorials/i2c" target="_blank">i2c</a> as serial communication protocol. More info on the servo driver can be found <a href="https://www.adafruit.com/product/815" target="_blank">here</a>.<br>
 		<img src="./arduino-mega.jpg" class="img-responsive margin" style="width:30%" alt="An Arduino Mega">
 		<img src="./adafruit-servo-driver.jpg" class="img-responsive margin" style="width:30%" alt="An Adafruit 16-Channel 12-bit PWM/Servo Driver (PCA9685)"></p>	
 		
@@ -67,12 +67,11 @@
 		<div class="gap-9"></div>
 
 		<p><b>The software:</b></p>
-		
-		<p>Arduino IDE<br>
-		
-		<p>Max 8 (Max MSP)
-		</p>
-		
+		<ul>
+			<li>Arduino IDE</li>
+			<li>Max 8 (Max MSP)</li>
+		</ul>	
+
 		<p>Additional library: <a href="https://learn.adafruit.com/16-channel-pwm-servo-driver/using-the-adafruit-library" target="_blank">Adafruit_PWMServoDriver.h</a>
 		</p>
 
@@ -94,7 +93,7 @@
 
 		<p>After attempts at doing this through SPI <a href="../11_week_11/index.html">radio communication</a>, <a href="../10_week_10/index.html">WiFi or Bluetooth</a>, and <a href="../15_week_15/index.html">trying to transform the signal back to DC</a> at the end of the chain to go directly into the effects pedal instead of mechanically moving the knob, this current setup seemed ideal for a couple of reasons:</p>
 
-		<p>I have limited the amount of microcontrollers to just one: the Arduino MEGA, in this case. With <a href="https://learn.sparkfun.com/tutorials/i2c" target="_blank">i2c</a> and the Adafruit Servo Driver, I can scale this up to accommodate up to 16 servo motors (to control 16 different knobs) basically with the exact same setup, without the need to add more than the two SDA and SCL cables that are already in place form the Arduino (the "control hub") and the output. Similarly, at the input level, the MEGA gives me up to 16 analog ins; so, potentially, 16 different MIDI foot pedals to control those motors. In addition to this, up to 62 servo drivers of the same kind can be chained together, increasing the amount of servos that can be controlled — again, without any extra cables from the Arduino — to 992, which seems excessive right now, of course, but you never know...
+		<p>I have limited the amount of microcontrollers to just one: the Arduino MEGA, in this case. With i2c and the Adafruit Servo Driver, I can scale this up to accommodate up to 16 servo motors (to control 16 different knobs) basically with the exact same setup, without the need to add more than the two SDA and SCL cables that are already in place between the Arduino (the "control hub") and the output. Similarly, at the input level, the MEGA gives me up to 16 analog ins; so, potentially, 16 different MIDI foot pedals could control those motors. In addition to this, up to 62 servo drivers of the same kind can be chained together, increasing the amount of servos that can be controlled — again, without any extra cables from the Arduino — to 992, which seems excessive right now, of course, but you never know...
 		</p>
 
 		<div class="gap-9"></div>
@@ -234,7 +233,7 @@
 	      </code></pre>
       	</p>
 
-        <p>I used a big chunk of that code for my project. Aside from a couple of different definitions for variables, I changed mostly the loop part to do what I needed it to, and it ended up looking like this:
+        <p>I used a big chunk of that code for my project. Aside from a couple of different definitions for variables, I changed mostly just the loop part to do what I needed it to, and it ended up looking like this:
         </p>
 
         <p><pre><code class="language-arduino">
@@ -316,12 +315,12 @@
 
 		<div class="gap-9"></div>
 	    
-	    <p>I then went to Max MSP and built this interface that is a little more user-friendly:
+	    <p>Once that was done, I then went to Max MSP and built this interface that is a little more user-friendly:
 	    </p>
 
-		<p><img src="./max-interface.png" class="img-responsive margin" style="width:80%" alt="A Max patch"><br>
-		I ask Max to read data from the serial port transmitted by Arduino using the <a href="https://docs.cycling74.com/max5/refpages/max-ref/serial.html" target="_blank">serial</a> object. In this case, the MEGA was connected to port C.<br>
-		If we look back at the loop section in the Arduino code, I am asking it to print two different serial readings, the "midiPed" value, which corresponds to the data from the MIDI expression pedal, and the "midiTrig" value, the MIDI foot pedal, used as a trigger. Separated by a space, Max then routes them to two different outputs using the <a href="https://docs.cycling74.com/max5/refpages/max-ref/unpack.html" target="_blank">unpack</a> object. By scaling the incoming values from 0-1023 to 0-127, I'm simply turning them into MIDI numbers, which is based on the idea that there are 128 notes on a MIDI keyboard.
+		<p><img src="./max-interface.png" class="img-responsive margin" style="width:100%" alt="A Max patch"><br>
+		I asked Max to read data from the serial port transmitted by Arduino using the "<a href="https://docs.cycling74.com/max5/refpages/max-ref/serial.html" target="_blank">serial</a>" object. In this case, the MEGA was connected to port C.<br>
+		If we look back at the loop section in the Arduino code, I am asking it to print two different serial readings, the "midiPed" value, which corresponds to the data from the MIDI expression pedal, and the "midiTrig" value, the MIDI foot pedal, used as a trigger. Separated by a space, Max then routes them to two different outputs using the "unpack" object. By scaling the incoming values from 0-1023 to 0-127, I'm simply turning them into MIDI numbers, which is based on the idea that there are 128 notes on a MIDI keyboard.
 		</p>
 
 		<p>As I stated above, one of the goals of this project was to maintain the flexiblity afforded by MIDI data in a program like Max, so this does just that: once these values have been converted to MIDI numbers, the incoming data from the two MIDI pedals can be mapped to anything in the MIDI world of Max. In this particular case, I am simply turning the second pedal (the MIDI foot pedal) into a trigger, a sort of on/off switch that triggers a preloaded audio file.
@@ -339,7 +338,7 @@
 
 		<p><b>THE THING</b> at work:</p>
 
-		<p><iframe width="560" height="315" src="https://www.youtube.com/embed/PtaNy7Fn5Ko" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+		<p><iframe width="853" height="505" src="https://www.youtube.com/embed/PtaNy7Fn5Ko" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
 
 		<div class="gap-9"></div>
 
